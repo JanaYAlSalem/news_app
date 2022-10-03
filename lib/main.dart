@@ -6,6 +6,7 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:news_app/bloc/block_obs.dart';
 import 'package:news_app/bloc/cubit.dart';
 import 'package:news_app/bloc/states.dart';
+import 'package:news_app/data/network/remote/dio/dio_helpe.dart';
 import 'package:news_app/ui/layout/NewsLayout.dart';
 
 void main() async {
@@ -13,17 +14,16 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   Bloc.observer = MyBlocObserver();
-
+  DioHelper.init();
+  // await CacheHelper.init();
 
 
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  // constructor
-  // build
 
-  MyApp();
+class MyApp extends StatelessWidget {
+
 
   @override
   Widget build(BuildContext context) {
